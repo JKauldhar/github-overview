@@ -21,7 +21,7 @@ jobs:
           who-to-greet: 'Mona the Octocat'
       - name: time
         run: |
-          echo "The time of the greeting was at: ${{ steps.greetings.outputs.time }}"
+          echo "The time of the greeting was at: ${{ steps.greetings.outputs.time }}" >> $GITHUB_OUTPUT
         
   secondjob:
     runs-on: ubuntu-latest
@@ -33,7 +33,7 @@ jobs:
         shell: bash
         run: |
           echo "this is the second job"
-          echo and this is a multi-line script
+          echo and this is a multi-line script >> $GITHUB_OUTPUT
   #     - name: environment variables
   #       env:
   #         STEP_VAR: "This variable is declared at the step level"
